@@ -3,7 +3,7 @@
     <div class="header">
         <div class="header-container">
             <div class="logo">备忘清单</div>
-            <input type="text" placeholder="添加待办事件" id="things">
+            <input type="text" placeholder="添加待办事件" id="things" v-model="newTodo">
         </div>
     </div>
     <div class="body-container">
@@ -22,7 +22,13 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  data(){
+    return {
+      newTodo:''
+    }
+  },
+
 }
 </script>
 
