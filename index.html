@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Template • TodoMVC</title>
+    <title>待办清单</title>
     <!-- <link rel="stylesheet" href="node_modules/todomvc-common/base.css"> -->
     <!-- <link rel="stylesheet" href="node_modules/todomvc-app-css/index.css"> -->
     <!-- CSS overrides - remove if you don't need it -->
@@ -14,8 +14,8 @@
 <body>
     <section class="todoapp">
         <header class="header">
-            <h1>todos</h1>
-            <input class="new-todo" placeholder="What needs to be done?" autofocus>
+            <h2>{{title}}</h2>
+            <input class="new-todo" placeholder="添加待办事项" autofocus v-model="newTodo">
         </header>
         <!-- This section should be hidden by default and shown when there are todos -->
         <section class="main">
