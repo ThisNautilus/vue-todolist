@@ -1,7 +1,22 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+  <div>
+    <div class="header">
+        <div class="header-container">
+            <div class="logo">备忘清单</div>
+            <input type="text" placeholder="添加待办事件" id="things">
+        </div>
+    </div>
+    <div class="body-container">
+        <h3>待办事项<span id="todoCount"></span></h3>
+        <ol></ol>
+        <h3>完成事项<span id="doneCount"></span></h3>
+        <ul></ul>
+    </div>
+    <div class="footer">
+        Copyright © Nautilus
+        <a href="javascript:;">ClearAll</a>
+    </div>
+    
   </div>
 </template>
 
@@ -12,12 +27,109 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+* {
+  padding: 0;
+  margin: 0;
 }
+.header {
+  height: 60px;
+  background-color: #006633;
+}
+.header .header-container {
+  height: 100%;
+  width: 700px;
+  margin: 0 auto;
+}
+.header .header-container .logo {
+  float: left;
+  width: 100px;
+  line-height: 60px;
+  color: #DDD;
+  font-size: 24px;
+  cursor: pointer;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.header .header-container input {
+  float: right;
+  width: 60%;
+  height: 28px;
+  margin-top: 16px;
+  text-indent: 10px;
+  border-radius: 5px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.24), 0 1px 6px rgba(0, 0, 0, 0.45) inset;
+  border: none;
+}
+.header .header-container input:focus {
+  outline-width: 0;
+}
+.body-container {
+  margin: 0 auto;
+  width: 700px;
+}
+.body-container ol,
+.body-container ul {
+  padding: 0;
+  list-style: none;
+}
+.body-container h3 {
+  position: relative;
+  margin: 10px 0 10px 0;
+}
+.body-container h3 span {
+  position: absolute;
+  top: 2px;
+  right: 5px;
+  display: inline-block;
+  padding: 0 5px;
+  height: 20px;
+  width: 20px;
+  border-radius: 20px;
+  background: #CCCC99;
+  line-height: 22px;
+  text-align: center;
+  color: #663300;
+  font-size: 14px;
+}
+.body-container li {
+  height: 30px;
+  border-left: 5px  solid #006633;
+  border-radius: 5px;
+  margin: 4px 0;
+}
+.body-container li input {
+  float: left;
+  margin: 6px 0 6px 10px;
+  height: 18px;
+  width: 18px;
+}
+.body-container li p {
+  float: left;
+  line-height: 30px;
+}
+.body-container li i {
+  display: block;
+  margin: 6px 10px 6px 0;
+  float: right;
+  color: #CC3333;
+  cursor: pointer;
+}
+.body-container ul li {
+  opacity: 0.5;
+  border-left: 5px  solid #663300;
+}
+.body-container ol li {
+  cursor: move;
+}
+.footer {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.footer a {
+  text-decoration: none;
+  font-weight: bolder;
+  color: #CC3333;
+}
+
 </style>

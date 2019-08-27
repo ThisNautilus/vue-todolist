@@ -1,16 +1,15 @@
-import 'todomvc-app-css/index.css'
-
+// The Vue build version to load with the `import` command
+// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
+import App from './App'
+import router from './router'
 
+Vue.config.productionTip = false
+
+/* eslint-disable no-new */
 new Vue({
-    el: '.todoapp',
-    data: {
-        msg: '',
-        title: '待办清单',
-        newTodo: ''
-    }
+  el: '#app',
+  router,
+  components: { App },
+  template: '<App/>'
 })
-
-// new Vue({
-//     el: '.info'
-// })
